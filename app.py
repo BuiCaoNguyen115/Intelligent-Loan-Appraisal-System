@@ -119,7 +119,7 @@ with st.sidebar:
     st.info("""
     **Student:** Bui Cao Nguyen
     **ID:** GCS210164/001477380
-    **Class:** TCS2501
+    **Class:** TCS2601
     """)
     st.caption("© 2025 University Graduation Project")
 
