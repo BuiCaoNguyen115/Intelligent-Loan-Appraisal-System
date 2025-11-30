@@ -246,7 +246,7 @@ elif page_key == "model_perf":
     st.subheader("2. Best Model Deep Dive (CatBoost + Optuna)")
     st.info("Detailed analysis of the best performing model (CatBoost Optimized).")
 
-    st.write("####Feature Importance")
+    st.write("#### Feature Importance")
     col_f1, col_f2 = st.columns(2)
     with col_f1:
         st.write("**Target: Loan Amount**")
