@@ -406,14 +406,14 @@ elif page_key == "dashboard":
         }
         
         cluster_data = pd.DataFrame([full_cluster_dict])[models['features_cluster']]
-        cluster_id = models['kmeans'].predict(models['scaler'].transform(cluster_data))[0]
+        cluster_id = models['kmeans'].predict(cluster_data)[0]
         
         st.success("Done!")
         m1, m2, m3 = st.columns(3)
         m1.metric("Loan Limit", f"{pred_amt:,.0f}")
         m2.metric("Interest Rate", f"{pred_int:.2f}%")
         m3.metric("Segment", f"Cluster {cluster_id}")
-        cluster_names = {0: "Potential VIP", 1: "Stable Customer", 2: "High Risk", 3: "Mass Market"}
+        cluster_names = {0: "Potential VIP", 1: "Stable Customer", 2: "Mass Market"}
         st.info(f"**Segment Characteristics:** {cluster_names.get(cluster_id)}")
 # --- PAGE: BI ---
 elif page_key == "bi":
