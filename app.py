@@ -406,7 +406,7 @@ elif page_key == "dashboard":
         }
         
         cluster_data = pd.DataFrame([full_cluster_dict])[models['features_cluster']]
-        cluster_id = models['kmeans'].predict(cluster_data)[0]
+        cluster_id = models['kmeans'].predict(models['scaler'].transform(cluster_data))[0]
         
         st.success("Done!")
         m1, m2, m3 = st.columns(3)
