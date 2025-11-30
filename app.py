@@ -198,7 +198,7 @@ elif page_key == "cluster":
         inertia = []
         K_range = range(1, 11)
         for k in K_range:
-            km = KMeans(n_clusters=k, random_state=42, n_init=10).fit(models['df_imputed'])
+            km = KMeans(n_clusters=k, random_state=42, n_init=10).fit(models['df_scaled'])
             inertia.append(km.inertia_)
             
         # Locate the Knee/Elbow Programmatically
