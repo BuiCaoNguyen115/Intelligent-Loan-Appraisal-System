@@ -108,7 +108,7 @@ with st.sidebar:
         "eda": "2. Exploratory Data Analysis",
         "data_compare": "3. Data Quality Check",
         "cluster": "4. Customer Segmentation",
-        "model_perf": "5. Model Performance & AI",
+        "model_perf": "5. Model Performance",
         "dashboard": "6. Prediction Dashboard",
         "bi": "7. Power BI Report"
     }
@@ -118,7 +118,7 @@ with st.sidebar:
     st.markdown("### 🎓 Project Info")
     st.info("""
     **Student:** Bui Cao Nguyen
-    **ID:** GCS210164/001477380
+    **ID:** 001477380
     **Class:** TCS2601
     """)
     st.caption("© 2025 University Graduation Project")
@@ -185,9 +185,9 @@ elif page_key == "data_compare":
         ax[1].set_title("Imputed")
         st.pyplot(fig)
 
-# --- PAGE: CUSTOMER SEGMENTATION (UPDATED WITH KNEELOCATOR) ---
+# --- PAGE: CUSTOMER SEGMENTATION---
 elif page_key == "cluster":
-    st.markdown("### Customer Segmentation (Advanced)")
+    st.markdown("### Customer Segmentation")
     
     col1, col2 = st.columns([1, 1.5])
     with col1:
