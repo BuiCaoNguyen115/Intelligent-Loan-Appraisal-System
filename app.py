@@ -254,7 +254,7 @@ elif page_key == "model_perf":
     st.markdown("### Comprehensive Model Performance")
     
     # 1. R2 SCORES
-    st.subheader("1. Model Benchmarking")
+    st.subheader("1. Model Benchmarking (R2 Score)")
     res = []
     for k, v in models['r2_results'].items():
         t = 'LOAN_AMOUNT' if '_LOAN_AMOUNT' in k else 'MONTH_INTEREST'
