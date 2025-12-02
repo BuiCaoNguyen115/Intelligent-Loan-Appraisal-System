@@ -441,4 +441,4 @@ elif page_key == "dashboard":
 # --- PAGE: BI ---
 elif page_key == "bi":
     st.title("Power BI")
-    components.html("""<iframe title="FInalProject1" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiN2NjZTY0YTQtODhkMy00NzkwLWExZGQtYzM3OGZmN2NkZjhkIiwidCI6IjA4MzZmY2IyLWJlNzktNGQ5Ny05YTkzLTFiMzRhZWJhNzdiZSIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>""", height=800)
+    components.html("""<iframe title="FInalProject1" width="100%" height="800" src="https://app.powerbi.com/view?r=eyJrIjoiZTY0ZGJjMjMtMTI4Ny00ZGQzLWE4ZWUtNWI4NmZlNDMwMDFmIiwidCI6IjA4MzZmY2IyLWJlNzktNGQ5Ny05YTkzLTFiMzRhZWJhNzdiZSIsImMiOjEwfQ%3D%3D" frameborder="0" allowFullScreen="true"></iframe>""", height=800)
