@@ -222,9 +222,21 @@ elif page_key == "cluster":
         else:
             st.warning("Could not detect a clear elbow point.")
 
-    with col2:
-        st.subheader("2. Cluster Profiles")
-        st.dataframe(models['profiles'].style.background_gradient(cmap='Greens'), use_container_width=True)
+        with col2:
+            st.subheader("2. Cluster Profiles")
+            st.dataframe(models['profiles'].style.background_gradient(cmap='Greens'), use_container_width=True)
+    
+            # --- NEW SECTION: INSIGHT (IN ENGLISH) ---
+            st.markdown("#### 💡 Business Insight: Why k=4 is Optimal?")
+            st.info("""
+            The segmentation into 4 clusters reveals distinct **Financial Life Stages**, allowing for targeted product strategies:
+            
+            * **Cluster 1 (The Starters):** Youngest group (~34 years old) with the lowest income (~131M) and least work experience. **Strategy:** Low-limit starter loans or credit building products.
+            * **Cluster 0 & 2 (The Stable Workforce):** Middle-aged (~42 years old) with solid income and the highest work experience (~15 years). **Strategy:** Low-risk personal loans and stable financing.
+            * **Cluster 3 (The Established Families):** Oldest group (~46 years old) with the highest income (~176M) but also the highest financial burden (most dependants ~1.1). **Strategy:** High-limit family support loans or mortgage refinancing.
+            
+            👉 **Conclusion:** Splitting into 4 groups captures these specific behaviors better than 3 (which might merge Starters and Stable) or 5 (which might over-segment similar groups).
+            """)
 
 # --- PAGE: MODEL PERFORMANCE (UPDATED WITH RESIDUALS) ---
 elif page_key == "model_perf":
