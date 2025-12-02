@@ -269,18 +269,36 @@ elif page_key == "model_perf":
     st.subheader("2. Best Model Deep Dive (CatBoost + Optuna)")
     st.info("Detailed analysis of the best performing model (CatBoost Optimized).")
 
-    st.write("#### Feature Importance")
+    st.write("#### Feature Importance Analysis")
     col_f1, col_f2 = st.columns(2)
+    
+    # Chart 1: Loan Amount
     with col_f1:
-        st.write("**Target: Loan Amount**")
+        st.markdown("**🎯 Target: Loan Amount**")
         fig1, ax1 = plt.subplots(figsize=(8, 6))
         sns.barplot(x='Importance', y='Feature', data=models['imp_loan'].head(10), palette='Blues_r', ax=ax1)
         st.pyplot(fig1)
+        
+        # Insight box for Loan Amount
+        st.success("""
+        **💡 Key Insight:**
+        * **Primary Drivers:** `LOAN_TERM` and `CUSTOMER_INCOME` are the most significant determinants of the loan limit.
+        * **Business Implication:** The model prioritizes **repayment capacity** (Income) and **commitment duration** (Term). Higher income and longer terms positively correlate with larger approved loan amounts.
+        """)
+
+    # Chart 2: Interest Rate
     with col_f2:
-        st.write("**Target: Interest Rate**")
+        st.markdown("**📉 Target: Interest Rate**")
         fig2, ax2 = plt.subplots(figsize=(8, 6))
         sns.barplot(x='Importance', y='Feature', data=models['imp_int'].head(10), palette='Reds_r', ax=ax2)
         st.pyplot(fig2)
+
+        # Insight box for Interest Rate
+        st.warning("""
+        **💡 Key Insight:**
+        * **Primary Drivers:** `PRODUCT_CATEGORY` is the dominant feature, accounting for a substantial portion (>50%) of the model's decision power.
+        * **Business Implication:** Interest rates are driven more by **product-specific policies** (e.g., Unsecured vs. Mortgage risk profiles) than by individual customer attributes.
+        """)
     
     st.markdown("---")
 
