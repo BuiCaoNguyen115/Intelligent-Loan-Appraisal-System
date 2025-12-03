@@ -133,7 +133,7 @@ if page_key == "context":
     
     data_dict = {
         "Feature Name": ["CONTRACT_NO", "PRODUCT_CATEGORY", "LOAN_TERM", "MONTH_INTEREST", "LOAN_PURPOSE", "BUSINESS_LINE", "LOAN_AMOUNT", "NUMBER_OF_DEPENDANTS", "PERMANENT_ADDRESS_PROVINCE", "JOB", "COMPANY_ADDRESS_PROVINCE", "EDUCATION", "CUSTOMER_INCOME", "ACCOMMODATION_TYPE", "WORKING_IN_YEAR", "MARITAL_STATUS", "INCOME_RESOURCE", "AGE"],
-        "Type": ["ID", "Categorical", "Numeric", "Numeric", "Categorical", "Categorical", "Target", "Numeric", "Categorical", "Categorical", "Categorical", "Categorical", "Numeric", "Categorical", "Numeric", "Categorical", "Categorical", "Numeric"],
+        "Type": ["ID", "Categorical", "Numeric", "Numeric (Target)", "Categorical", "Categorical", "Numeric (Target)", "Numeric", "Categorical", "Categorical", "Categorical", "Categorical", "Numeric", "Categorical", "Numeric", "Categorical", "Categorical", "Numeric"],
         "Description": ["ID", "Product Type", "Term (Months)", "Interest Rate", "Purpose", "Business Sector", "Loan Limit (VND)", "Dependants", "Province Code", "Job Title", "Work Province", "Education", "Income", "Housing", "Experience", "Marital Status", "Income Source", "Age"]
     }
     st.dataframe(pd.DataFrame(data_dict), use_container_width=True, hide_index=True)
